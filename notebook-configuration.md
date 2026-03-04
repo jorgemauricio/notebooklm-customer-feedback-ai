@@ -95,3 +95,32 @@ Generate an audio summary (podcast format) of the notebook to listen to general 
 
 **📊 Data Tables (NotebookLM Plus):**
 Export analyses directly to Google Sheets to complement the RICE Matrix.
+
+## 🗺️ End-to-End Workflow
+
+Use this as a final checklist to confirm your notebook is fully configured and ready for analysis.
+```
+  STEP 1 — PREPARE                    STEP 2 — LOAD
+  ──────────────────                  ──────────────────────────
+  📄 Structure PDFs            ──▶    📚 Upload to NotebookLM
+     · Add headers                       · Max 50 sources
+     · Anonymize names                   · 1 notebook per goal
+     · Follow naming convention          · Wait for processing
+
+  STEP 3 — CONFIGURE                  STEP 4 — ANALYZE
+  ──────────────────────────          ──────────────────────────
+  🧠 Paste Master Prompt       ──▶    🔍 Run specialized prompts
+     · Notebook Instructions              · Bottleneck detection
+     · Sets AI behavior                   · Improvement opportunities
+     · Save before querying               · RICE input generation
+
+  STEP 5 — PRIORITIZE                 STEP 6 — DECIDE
+  ──────────────────────────          ──────────────────────────
+  📊 Fill RICE Matrix          ──▶    🚀 Build your roadmap
+     · Score each initiative              · Sprint planning
+     · Validate effort with eng.          · Stakeholder presentation
+     · Apply quadrant view                · Log decisions & changes
+```
+
+> ✅ If you have completed all 6 steps, your NotebookLM system is fully operational.
+> Return to [README.md](../README.md) for a full project overview.
