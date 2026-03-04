@@ -51,7 +51,84 @@ Use the specialized prompts in `/prompts/` depending on what you need to investi
 Bring your findings into the matrix at [`/rice-framework/rice-matrix-template.md`](./rice-framework/rice-matrix-template.md)
 
 ---
+## 🗺️ How It All Fits Together
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  📂 CUSTOMER FEEDBACK PDFs                  │
+│           NPS · Interviews · Tickets · Reviews              │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│              🔧 STRUCTURE YOUR DOCUMENTS                    │
+│         Follow /pdf-structure/feedback-pdf-template.md      │
+│                                                             │
+│  ✓ Add header with period & context                         │
+│  ✓ Anonymize customer names                                 │
+│  ✓ Separate qualitative entries individually                │
+│  ✓ Follow the file naming convention                        │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│              📚 LOAD INTO NOTEBOOKLM                        │
+│         One notebook per analysis objective                 │
+│                                                             │
+│  📓 Notebook 1 → General Feedback (NPS + Surveys)          │
+│  📓 Notebook 2 → Discovery Interviews                       │
+│  📓 Notebook 3 → Support Tickets                            │
+│  📓 Notebook 4 → Churn & Retention                          │
+│  📓 Notebook 5 → Competitive Analysis                       │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│              🧠 ACTIVATE THE MASTER PROMPT                  │
+│            /prompts/master-prompt.md                        │
+│                                                             │
+│  Paste into NotebookLM → Notebook Instructions             │
+│  Sets the AI behavior for all queries in this notebook      │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│           🔍 RUN SPECIALIZED ANALYSIS PROMPTS               │
+│                                                             │
+│  🔴 bottleneck-detection.md                                 │
+│     └─ Friction points, blockers, drop-off moments         │
+│                                                             │
+│  🟢 improvement-opportunities.md                            │
+│     └─ New features, UX improvements, latent needs         │
+│                                                             │
+│  📊 improvement-opportunities.md (RICE inputs section)      │
+│     └─ Reach, Impact, Confidence estimates per initiative   │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│           📊 PRIORITIZE WITH THE RICE MATRIX                │
+│        /rice-framework/rice-matrix-template.md              │
+│                                                             │
+│  RICE Score = (Reach × Impact × Confidence) / Effort        │
+│                                                             │
+│  🔥 Score > 200  →  Top priority — execute now             │
+│  ✅ Score 100-200 →  High priority — next quarter           │
+│  🟡 Score 50-100  →  Medium — qualified backlog             │
+│  ⬇️ Score < 50    →  Low — revisit next cycle              │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│              🚀 ROADMAP DECISIONS                           │
+│         Based on evidence, not intuition                    │
+│                                                             │
+│  → Bring scores to sprint planning                          │
+│  → Present quadrant view to stakeholders                    │
+│  → Log decisions in the RICE change log                     │
+└─────────────────────────────────────────────────────────────┘
+```
 
+---
 ## 📂 Repository Structure
 
 | Folder | Description |
